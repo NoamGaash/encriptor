@@ -8,9 +8,12 @@ import java.util.Scanner;
 public class Main {
 	
 	protected static Scanner sc = new Scanner(System.in);
-	static String[] encryption = {"1", "e", "enc", "encryption"};
-	static String[] decryption = {"2", "d", "dec", "decryption"};
 	
+	
+	
+	/**
+	 * represent all legal states: encryption state or decryption state.
+	 */
 	public static enum State {
 		encryption, decryption
 	}
@@ -28,16 +31,23 @@ public class Main {
 		sc.close();
 	}
 
+	/**
+	 * let the user choose (via standard input/output) between encryption state and decryption state
+	 * @return the chosen state
+	 */
 	private static State chooseEncryptDecrypt() {
+		String[] encryptionOptions = {"1", "e", "enc", "encryption"};
+		String[] decryptionOptions = {"2", "d", "dec", "decryption"};
+		
 		System.out.println("choose between encryption and decription");
-		System.out.println("to choose encription, you may type one of the following: " + Arrays.toString(encryption));
-		System.out.println("to choose decryption, you may type one of the following: " + Arrays.toString(decryption));
+		System.out.println("to choose encription, you may type one of the following: " + Arrays.toString(encryptionOptions));
+		System.out.println("to choose decryption, you may type one of the following: " + Arrays.toString(decryptionOptions));
 		String ans;
 		do{
 			ans = sc.next();
-		}while (!Arrays.asList(encryption).contains(ans) && !Arrays.asList(decryption).contains(ans));
+		}while (!Arrays.asList(encryptionOptions).contains(ans) && !Arrays.asList(decryptionOptions).contains(ans));
 		
-		if(Arrays.asList(encryption).contains(ans)){
+		if(Arrays.asList(encryptionOptions).contains(ans)){
 			return State.encryption;
 		} else {
 			return State.decryption;
