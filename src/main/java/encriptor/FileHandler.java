@@ -8,8 +8,9 @@ public class FileHandler {
 	protected static String chooseFile() {
 		String fileName;
 		do{
-			fileName = Main.sc.next();
-		}while(fileName != null && fileExist(fileName));
+			System.out.println("please enter path of file");
+			fileName = Main.sc.nextLine();
+		}while(fileName == null || !fileExist(fileName));
 		return fileName;
 	}
 
