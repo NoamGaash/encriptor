@@ -1,10 +1,10 @@
 package encriptor;
 
 public class Encryption {
-	public static void encrypt() {
-		System.out.println("pretend to do encryption");
+	public static void encrypt(String fileName) {
+		System.out.println("pretending to do encryption");
 	}
-	public static void decrypt() {
-		System.out.println("pretend to do decryption");
+	public static void decrypt(String fileName) {
+		System.out.println("pretending to do decryption");
 	}
 }
