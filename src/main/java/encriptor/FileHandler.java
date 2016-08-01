@@ -8,11 +8,10 @@ public class FileHandler {
 	 * asks the user to select a file
 	 * @return file name / path
 	 */
-	protected static String chooseFile() {
+	public static String chooseFile() {
 		String fileName;
 		do{
-			System.out.println("please enter path of file");
-			fileName = Main.sc.nextLine();
+			fileName = StdIn.getInput("please enter path of file");
 		}while(fileName == null || !fileExist(fileName));
 		return fileName;
 	}
@@ -22,7 +21,7 @@ public class FileHandler {
 	 * @param fileName
 	 * @return true if the file exist, false if the file does not exist
 	 */
-	protected static boolean fileExist(String fileName) {
+	public static boolean fileExist(String fileName) {
 		File f = new File(fileName);
 		return f.exists() && f.isFile();
 	}

@@ -7,10 +7,6 @@ import java.util.Scanner;
 
 public class Main {
 	
-	protected static Scanner sc = new Scanner(System.in);
-	
-	
-	
 	/**
 	 * represent all legal states: encryption state or decryption state.
 	 */
@@ -28,7 +24,6 @@ public class Main {
 		}
 		
 		 
-		sc.close();
 	}
 
 	/**
@@ -39,12 +34,12 @@ public class Main {
 		String[] encryptionOptions = {"1", "e", "enc", "encryption"};
 		String[] decryptionOptions = {"2", "d", "dec", "decryption"};
 		
-		System.out.println("choose between encryption and decription");
-		System.out.println("to choose encription, you may type one of the following: " + Arrays.toString(encryptionOptions));
-		System.out.println("to choose decryption, you may type one of the following: " + Arrays.toString(decryptionOptions));
+		String msg = "choose between encryption and decription\n";
+		msg += "\tto choose encription, you may type one of the following: " + Arrays.toString(encryptionOptions)+'\n';
+		msg += "\tto choose decryption, you may type one of the following: " + Arrays.toString(decryptionOptions);
 		String ans;
 		do{
-			ans = sc.next();
+			ans = StdIn.getInput(msg);
 		}while (!Arrays.asList(encryptionOptions).contains(ans) && !Arrays.asList(decryptionOptions).contains(ans));
 		
 		if(Arrays.asList(encryptionOptions).contains(ans)){
